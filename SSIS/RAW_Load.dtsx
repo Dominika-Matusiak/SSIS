@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{A1500494-E70A-4A94-B180-19BF6681F21D}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{91B6CF9E-33BD-44CF-B4F1-67E7D54316CF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -6508,7 +6508,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[raw].[Invoices2021]</property>
+                  name="OpenRowset">[raw].[InvoiceLines2021]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -6538,7 +6538,7 @@
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">true</property>
+                  name="FastLoadKeepNulls">false</property>
                 <property
                   dataType="System.String"
                   description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
@@ -6565,11 +6565,82 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].Columns[InvoiceLineID]"
+                      cachedDataType="i4"
+                      cachedName="InvoiceLineID"
+                      externalMetadataColumnId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[InvoiceLineID]"
+                      lineageId="Package\Invoice_lines\src_invoice_lines_2021.Outputs[OLE DB Source Output].Columns[InvoiceLineID]" />
+                    <inputColumn
                       refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].Columns[InvoiceID]"
                       cachedDataType="i4"
                       cachedName="InvoiceID"
                       externalMetadataColumnId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[InvoiceID]"
                       lineageId="Package\Invoice_lines\src_invoice_lines_2021.Outputs[OLE DB Source Output].Columns[InvoiceID]" />
+                    <inputColumn
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].Columns[StockItemID]"
+                      cachedDataType="i4"
+                      cachedName="StockItemID"
+                      externalMetadataColumnId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[StockItemID]"
+                      lineageId="Package\Invoice_lines\src_invoice_lines_2021.Outputs[OLE DB Source Output].Columns[StockItemID]" />
+                    <inputColumn
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].Columns[Description]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Description"
+                      externalMetadataColumnId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
+                      lineageId="Package\Invoice_lines\src_invoice_lines_2021.Outputs[OLE DB Source Output].Columns[Description]" />
+                    <inputColumn
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].Columns[PackageTypeID]"
+                      cachedDataType="i4"
+                      cachedName="PackageTypeID"
+                      externalMetadataColumnId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[PackageTypeID]"
+                      lineageId="Package\Invoice_lines\src_invoice_lines_2021.Outputs[OLE DB Source Output].Columns[PackageTypeID]" />
+                    <inputColumn
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].Columns[Quantity]"
+                      cachedDataType="i4"
+                      cachedName="Quantity"
+                      externalMetadataColumnId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Invoice_lines\src_invoice_lines_2021.Outputs[OLE DB Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].Columns[UnitPrice]"
+                      cachedDataType="numeric"
+                      cachedName="UnitPrice"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      lineageId="Package\Invoice_lines\src_invoice_lines_2021.Outputs[OLE DB Source Output].Columns[UnitPrice]" />
+                    <inputColumn
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].Columns[TaxRate]"
+                      cachedDataType="numeric"
+                      cachedName="TaxRate"
+                      cachedPrecision="18"
+                      cachedScale="3"
+                      externalMetadataColumnId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[TaxRate]"
+                      lineageId="Package\Invoice_lines\src_invoice_lines_2021.Outputs[OLE DB Source Output].Columns[TaxRate]" />
+                    <inputColumn
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].Columns[TaxAmount]"
+                      cachedDataType="numeric"
+                      cachedName="TaxAmount"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[TaxAmount]"
+                      lineageId="Package\Invoice_lines\src_invoice_lines_2021.Outputs[OLE DB Source Output].Columns[TaxAmount]" />
+                    <inputColumn
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].Columns[LineProfit]"
+                      cachedDataType="numeric"
+                      cachedName="LineProfit"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[LineProfit]"
+                      lineageId="Package\Invoice_lines\src_invoice_lines_2021.Outputs[OLE DB Source Output].Columns[LineProfit]" />
+                    <inputColumn
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].Columns[ExtendedPrice]"
+                      cachedDataType="numeric"
+                      cachedName="ExtendedPrice"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[ExtendedPrice]"
+                      lineageId="Package\Invoice_lines\src_invoice_lines_2021.Outputs[OLE DB Source Output].Columns[ExtendedPrice]" />
                     <inputColumn
                       refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].Columns[LastEditedBy]"
                       cachedDataType="i4"
@@ -6587,103 +6658,60 @@
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[InvoiceLineID]"
+                      dataType="i4"
+                      name="InvoiceLineID" />
+                    <externalMetadataColumn
                       refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[InvoiceID]"
                       dataType="i4"
                       name="InvoiceID" />
                     <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[CustomerID]"
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[StockItemID]"
                       dataType="i4"
-                      name="CustomerID" />
+                      name="StockItemID" />
                     <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[BillToCustomerID]"
-                      dataType="i4"
-                      name="BillToCustomerID" />
-                    <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[OrderID]"
-                      dataType="i4"
-                      name="OrderID" />
-                    <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryMethodID]"
-                      dataType="i4"
-                      name="DeliveryMethodID" />
-                    <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[ContactPersonID]"
-                      dataType="i4"
-                      name="ContactPersonID" />
-                    <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[AccountsPersonID]"
-                      dataType="i4"
-                      name="AccountsPersonID" />
-                    <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[SalespersonPersonID]"
-                      dataType="i4"
-                      name="SalespersonPersonID" />
-                    <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[PackedByPersonID]"
-                      dataType="i4"
-                      name="PackedByPersonID" />
-                    <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[InvoiceDate]"
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[Description]"
                       dataType="wstr"
-                      length="10"
-                      name="InvoiceDate" />
+                      length="100"
+                      name="Description" />
                     <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[CustomerPurchaseOrderNumber]"
-                      dataType="wstr"
-                      length="20"
-                      name="CustomerPurchaseOrderNumber" />
-                    <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[IsCreditNote]"
-                      dataType="bool"
-                      name="IsCreditNote" />
-                    <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[CreditNoteReason]"
-                      dataType="nText"
-                      name="CreditNoteReason" />
-                    <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[Comments]"
-                      dataType="nText"
-                      name="Comments" />
-                    <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryInstructions]"
-                      dataType="nText"
-                      name="DeliveryInstructions" />
-                    <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[InternalComments]"
-                      dataType="nText"
-                      name="InternalComments" />
-                    <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[TotalDryItems]"
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[PackageTypeID]"
                       dataType="i4"
-                      name="TotalDryItems" />
+                      name="PackageTypeID" />
                     <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[TotalChillerItems]"
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
                       dataType="i4"
-                      name="TotalChillerItems" />
+                      name="Quantity" />
                     <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[DeliveryRun]"
-                      dataType="wstr"
-                      length="5"
-                      name="DeliveryRun" />
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[UnitPrice]"
+                      dataType="numeric"
+                      name="UnitPrice"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[RunPosition]"
-                      dataType="wstr"
-                      length="5"
-                      name="RunPosition" />
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[TaxRate]"
+                      dataType="numeric"
+                      name="TaxRate"
+                      precision="18"
+                      scale="3" />
                     <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[ReturnedDeliveryData]"
-                      dataType="nText"
-                      name="ReturnedDeliveryData" />
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[TaxAmount]"
+                      dataType="numeric"
+                      name="TaxAmount"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[ConfirmedDeliveryTime]"
-                      dataType="wstr"
-                      length="27"
-                      name="ConfirmedDeliveryTime" />
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[LineProfit]"
+                      dataType="numeric"
+                      name="LineProfit"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[ConfirmedReceivedBy]"
-                      dataType="wstr"
-                      length="4000"
-                      name="ConfirmedReceivedBy" />
+                      refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[ExtendedPrice]"
+                      dataType="numeric"
+                      name="ExtendedPrice"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input].ExternalColumns[LastEditedBy]"
                       dataType="i4"
@@ -8928,24 +8956,24 @@
           <paths>
             <path
               refId="Package\Invoice_lines.Paths[OLE DB Source Output]"
-              endId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Invoice_lines\src_invoice_lines_2021.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Invoice_lines.Paths[OLE DB Source Output1]"
               endId="Package\Invoice_lines\dst_invoice_lines_2022.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Invoice_lines\src_invoice_lines_2022.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Invoice_lines.Paths[OLE DB Source Output2]"
+              refId="Package\Invoice_lines.Paths[OLE DB Source Output1]"
               endId="Package\Invoice_lines\dst_invoice_lines_2023.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Invoice_lines\src_invoice_lines_2023.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Invoice_lines.Paths[OLE DB Source Output3]"
+              refId="Package\Invoice_lines.Paths[OLE DB Source Output2]"
               endId="Package\Invoice_lines\dst_invoice_lines_2024.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Invoice_lines\src_invoice_lines_2024.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Invoice_lines.Paths[OLE DB Source Output3]"
+              endId="Package\Invoice_lines\dst_invoice_lines_2021.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Invoice_lines\src_invoice_lines_2021.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -24319,14 +24347,14 @@
         <NodeLayout
           Size="104,42"
           Id="Package\Cities"
-          TopLeft="37.5,26.5" />
+          TopLeft="37.5,29.5" />
         <NodeLayout
           Size="108,42"
           Id="Package\Colors"
-          TopLeft="281.5,34.5" />
+          TopLeft="281.5,37.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="141.5,47.5">
+          TopLeft="141.5,50.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24361,33 +24389,33 @@
         <NodeLayout
           Size="140,42"
           Id="Package\Invoice_lines"
-          TopLeft="460.5,51.5" />
+          TopLeft="491.5,1.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="389.5,55.5">
+          TopLeft="389.5,58.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="71,17"
+              EndConnector="102,-36"
               Start="0,0"
-              End="63.5,17">
+              End="94.5,-36">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="31.5,0" />
+                    End="47,0" />
                   <mssgle:CubicBezierSegment
-                    Point1="31.5,0"
-                    Point2="35.5,0"
-                    Point3="35.5,4" />
+                    Point1="47,0"
+                    Point2="51,0"
+                    Point3="51,-4" />
                   <mssgle:LineSegment
-                    End="35.5,13" />
+                    End="51,-32" />
                   <mssgle:CubicBezierSegment
-                    Point1="35.5,13"
-                    Point2="35.5,17"
-                    Point3="39.5,17" />
+                    Point1="51,-32"
+                    Point2="51,-36"
+                    Point3="55,-36" />
                   <mssgle:LineSegment
-                    End="63.5,17" />
+                    End="94.5,-36" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24399,37 +24427,37 @@
         <NodeLayout
           Size="173,42"
           Id="Package\CustomerCategories"
-          TopLeft="674.5,81.5" />
+          TopLeft="674.5,84.5" />
         <NodeLayout
           Size="129,42"
           Id="Package\Customers"
-          TopLeft="96.5,137.5" />
+          TopLeft="96.5,140.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="600.5,72.5">
+          TopLeft="561.5,43.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="74,30"
+              EndConnector="199.5,41"
               Start="0,0"
-              End="66.5,30">
+              End="199.5,33.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="33,0" />
+                    End="0,16.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="33,0"
-                    Point2="37,0"
-                    Point3="37,4" />
+                    Point1="0,16.5"
+                    Point2="0,20.5"
+                    Point3="4,20.5" />
                   <mssgle:LineSegment
-                    End="37,26" />
+                    End="195.5,20.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="37,26"
-                    Point2="37,30"
-                    Point3="41,30" />
+                    Point1="195.5,20.5"
+                    Point2="199.5,20.5"
+                    Point3="199.5,24.5" />
                   <mssgle:LineSegment
-                    End="66.5,30" />
+                    End="199.5,33.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -24440,7 +24468,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="674.5,108.166666666667">
+          TopLeft="674.5,111.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24475,10 +24503,10 @@
         <NodeLayout
           Size="157,42"
           Id="Package\DeliveryMethods"
-          TopLeft="103.5,233.5" />
+          TopLeft="103.5,236.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="161,179.5">
+          TopLeft="161,182.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24513,10 +24541,10 @@
         <NodeLayout
           Size="118,42"
           Id="Package\Invoices"
-          TopLeft="305.5,225.5" />
+          TopLeft="305.5,228.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="260.5,254.5">
+          TopLeft="260.5,257.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24551,10 +24579,10 @@
         <NodeLayout
           Size="130,42"
           Id="Package\OrderLines"
-          TopLeft="515.5,221.5" />
+          TopLeft="515.5,224.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="423.5,244.5">
+          TopLeft="423.5,247.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24577,10 +24605,10 @@
         <NodeLayout
           Size="111,42"
           Id="Package\Orders"
-          TopLeft="727.5,245.5" />
+          TopLeft="727.5,248.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="645.5,242.5">
+          TopLeft="645.5,245.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24615,10 +24643,10 @@
         <NodeLayout
           Size="146,42"
           Id="Package\PackageTypes"
-          TopLeft="916.5,275.5" />
+          TopLeft="916.5,278.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="838.5,266.5">
+          TopLeft="838.5,269.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24653,10 +24681,10 @@
         <NodeLayout
           Size="160,42"
           Id="Package\PaymentMethods"
-          TopLeft="895.5,349.5" />
+          TopLeft="895.5,352.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="989.5,317.5">
+          TopLeft="989.5,320.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24691,10 +24719,10 @@
         <NodeLayout
           Size="110,42"
           Id="Package\People"
-          TopLeft="685.5,351.5" />
+          TopLeft="685.5,354.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="895.5,371.5">
+          TopLeft="895.5,374.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24717,10 +24745,10 @@
         <NodeLayout
           Size="153,42"
           Id="Package\PurchaseOrders"
-          TopLeft="480.5,346.5" />
+          TopLeft="480.5,349.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="685.5,370">
+          TopLeft="685.5,373">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24743,10 +24771,10 @@
         <NodeLayout
           Size="148,42"
           Id="Package\StateProvinces"
-          TopLeft="271.5,324.5" />
+          TopLeft="271.5,327.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="480.5,367.5">
+          TopLeft="480.5,370.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24781,10 +24809,10 @@
         <NodeLayout
           Size="138,42"
           Id="Package\StockGroups"
-          TopLeft="99.5,353.5" />
+          TopLeft="99.5,356.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="271.5,345.5">
+          TopLeft="271.5,348.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24819,10 +24847,10 @@
         <NodeLayout
           Size="131,42"
           Id="Package\StockItems"
-          TopLeft="88.5,427.5" />
+          TopLeft="88.5,430.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 14]"
-          TopLeft="168.5,395.5">
+          TopLeft="168.5,398.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24857,10 +24885,10 @@
         <NodeLayout
           Size="190,42"
           Id="Package\StockItemsStockGroups"
-          TopLeft="266.5,449.5" />
+          TopLeft="266.5,452.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 15]"
-          TopLeft="219.5,448.5">
+          TopLeft="219.5,451.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24895,10 +24923,10 @@
         <NodeLayout
           Size="127,42"
           Id="Package\Supplieres"
-          TopLeft="536.5,450.5" />
+          TopLeft="536.5,453.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 16]"
-          TopLeft="456.5,471">
+          TopLeft="456.5,474">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24921,10 +24949,10 @@
         <NodeLayout
           Size="177,42"
           Id="Package\SupplieresCategories"
-          TopLeft="718.5,453.5" />
+          TopLeft="718.5,456.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 17]"
-          TopLeft="663.5,473">
+          TopLeft="663.5,476">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -24947,10 +24975,10 @@
         <NodeLayout
           Size="161,42"
           Id="Package\TransactionsType"
-          TopLeft="935.5,479.5" />
+          TopLeft="935.5,482.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 18]"
-          TopLeft="895.5,474.5">
+          TopLeft="895.5,477.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -25133,44 +25161,18 @@
         <NodeLayout
           Size="187,42"
           Id="Package\Invoice_lines\src_invoice_lines_2021"
-          TopLeft="5.5,5.5" />
+          TopLeft="5.5,12.5" />
         <NodeLayout
           Size="187,42"
           Id="Package\Invoice_lines\src_invoice_lines_2022"
-          TopLeft="21.5,77.5" />
-        <NodeLayout
-          Size="188,42"
-          Id="Package\Invoice_lines\dst_invoice_lines_2021"
-          TopLeft="248.5,9.5" />
+          TopLeft="21.5,84.5" />
         <NodeLayout
           Size="188,42"
           Id="Package\Invoice_lines\dst_invoice_lines_2022"
-          TopLeft="297.5,82.5" />
+          TopLeft="297.5,89.5" />
         <EdgeLayout
           Id="Package\Invoice_lines.Paths[OLE DB Source Output]"
-          TopLeft="192.5,28.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="56,0"
-              Start="0,0"
-              End="48.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="48.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Invoice_lines.Paths[OLE DB Source Output1]"
-          TopLeft="208.5,101">
+          TopLeft="208.5,108">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -25193,22 +25195,22 @@
         <NodeLayout
           Size="187,42"
           Id="Package\Invoice_lines\src_invoice_lines_2023"
-          TopLeft="36.5,142.5" />
+          TopLeft="36.5,149.5" />
         <NodeLayout
           Size="187,42"
           Id="Package\Invoice_lines\src_invoice_lines_2024"
-          TopLeft="33.5,203.5" />
+          TopLeft="33.5,210.5" />
         <NodeLayout
           Size="188,42"
           Id="Package\Invoice_lines\dst_invoice_lines_2023"
-          TopLeft="378.5,160.5" />
+          TopLeft="378.5,167.5" />
         <NodeLayout
           Size="188,42"
           Id="Package\Invoice_lines\dst_invoice_lines_2024"
-          TopLeft="398.5,217.5" />
+          TopLeft="398.5,224.5" />
         <EdgeLayout
-          Id="Package\Invoice_lines.Paths[OLE DB Source Output2]"
-          TopLeft="223.5,163.5">
+          Id="Package\Invoice_lines.Paths[OLE DB Source Output1]"
+          TopLeft="223.5,170.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -25241,8 +25243,8 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Invoice_lines.Paths[OLE DB Source Output3]"
-          TopLeft="220.5,224.5">
+          Id="Package\Invoice_lines.Paths[OLE DB Source Output2]"
+          TopLeft="220.5,231.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -25274,6 +25276,44 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Invoice_lines\dst_invoice_lines_2021"
+          TopLeft="375.5,27.5" />
+        <EdgeLayout
+          Id="Package\Invoice_lines.Paths[OLE DB Source Output3]"
+          TopLeft="192.5,33.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="183,15"
+              Start="0,0"
+              End="175.5,15">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="87.5,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="87.5,0"
+                    Point2="91.5,0"
+                    Point3="91.5,4" />
+                  <mssgle:LineSegment
+                    End="91.5,11" />
+                  <mssgle:CubicBezierSegment
+                    Point1="91.5,11"
+                    Point2="91.5,15"
+                    Point3="95.5,15" />
+                  <mssgle:LineSegment
+                    End="175.5,15" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -25292,19 +25332,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Invoice_lines\src_invoice_lines_2022">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Invoice_lines\dst_invoice_lines_2021">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -27610,6 +27637,19 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\TransactionsType\dst_supplaierTrans_2024">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Invoice_lines\dst_invoice_lines_2021">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
